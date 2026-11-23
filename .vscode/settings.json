@@ -1,0 +1,4 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "explorer.decorations.badges": false
+}
