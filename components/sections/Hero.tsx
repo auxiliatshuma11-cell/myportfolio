@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "motion/react";
 import { FaArrowRight, FaDownload } from "react-icons/fa6";
 import Reveal from "@/components/Reveal";
@@ -10,7 +9,7 @@ import TypingText from "@/components/TypingText";
 const ROLES: string[] = ["full-stack software engineer"];
 
 const codeCard = `const developer = {
-  name: "Auxilia",
+  name: "Auxilia Tshuma",
   role: "Full-stack software engineer",
   passion: "Building for the web",
 };`;
@@ -29,7 +28,7 @@ export default function Hero() {
         </Reveal>
         <Reveal delay={0.1} y={20}>
           <h1 className="mt-5 text-4xl font-extrabold leading-tight sm:text-5xl md:text-6xl">
-            Hi, I&rsquo;m <span className="text-iris">Auxilia</span>
+            Hi, I&rsquo;m <span className="text-iris">Auxilia Tshuma</span>
             <br />
             <span className="text-2xl font-bold sm:text-4xl md:text-5xl">
               I build things for the web.
@@ -59,7 +58,7 @@ export default function Hero() {
               <FaArrowRight aria-hidden="true" />
             </motion.a>
             <motion.a
-              href="/Tshuma_Auxilia_Chilongezyo_CV.pdf"
+              href="/Tshuma_Auxilia_Chilongezyo_CV_styled.pdf"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
@@ -84,43 +83,43 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 0.85 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative mx-auto order-1 h-64 w-64 sm:h-80 sm:w-80 md:order-2 md:h-96 md:w-96"
+        className="relative mx-auto order-1 w-[17rem] sm:w-[22rem] md:order-2 md:w-[26rem]"
       >
-        {/* Slowly rotating dashed orbit */}
         <motion.div
           aria-hidden="true"
           animate={{ rotate: 360 }}
           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          className="absolute -inset-5 rounded-full border border-dashed border-iris/50"
+          className="absolute left-1/2 top-16 h-64 w-64 -translate-x-1/2 rounded-full border border-dashed border-iris/40 sm:h-72 sm:w-72 md:h-80 md:w-80"
         />
 
-        {/* Photo, gently floating */}
         <motion.div
           animate={{ y: [0, -14, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="h-full w-full rounded-full bg-iris-gradient p-1.5 shadow-[0_0_80px_rgba(139,108,255,0.45)]"
+          className="relative"
         >
-          <div className="relative h-full w-full overflow-hidden rounded-full bg-panel">
-            <Image
-              src="/IMG/profile.jpeg"
-              alt="Portrait of Auxilia Tshuma"
-              fill
-              priority
-              sizes="(min-width: 768px) 384px, 288px"
-              className="object-cover"
-            />
+          <div
+            aria-label="Laptop profile"
+            className="relative mx-auto w-[88%] rounded-t-[1.15rem] border-[6px] border-b-0 border-[#1a2147] bg-[#050818] p-2 shadow-[0_0_55px_rgba(139,108,255,0.38)]"
+          >
+            <div className="absolute left-1/2 top-1 h-1 w-1 -translate-x-1/2 rounded-full bg-muted/70" />
+            <div className="mt-1 flex h-32 items-center justify-center overflow-hidden rounded-t-lg border border-line/70 bg-gradient-to-br from-[#11183d] to-[#090d25] sm:h-36 md:h-44">
+              <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-iris-gradient text-3xl font-black text-white shadow-[0_0_32px_rgba(139,108,255,0.55)] sm:h-24 sm:w-24 sm:text-4xl">
+                AT
+                <span className="absolute -bottom-1 -right-1 h-4 w-4 rounded-full border-2 border-[#090d25] bg-emerald-400" />
+              </div>
+            </div>
           </div>
-        </motion.div>
 
-        {/* Code card, floating the other way */}
-        <motion.pre
-          aria-hidden="true"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -bottom-6 -right-2 hidden rounded-xl border border-line bg-panel/90 p-3 font-mono text-[10px] leading-relaxed text-muted backdrop-blur sm:-right-4 sm:block md:-right-12 md:p-4 md:text-xs lg:-right-16"
-        >
-          {codeCard}
-        </motion.pre>
+          <div className="mx-auto h-3 w-full rounded-b-[1.1rem] border-t border-[#343d73] bg-gradient-to-b from-[#59618f] via-[#242a55] to-[#11152f] shadow-[0_16px_30px_rgba(0,0,0,0.35)]" />
+          <div className="mx-auto h-2 w-[74%] rounded-b-[1.2rem] bg-[#080b1d] shadow-[0_8px_20px_rgba(0,0,0,0.5)]" />
+
+          <pre
+            aria-label="Developer profile code"
+            className="mx-auto mt-5 w-[88%] overflow-hidden rounded-xl border border-line bg-night/95 p-4 text-left font-mono text-[11px] leading-relaxed text-muted shadow-2xl sm:p-5 sm:text-xs md:text-sm"
+          >
+            <code>{codeCard}</code>
+          </pre>
+        </motion.div>
       </motion.div>
     </section>
   );

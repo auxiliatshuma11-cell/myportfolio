@@ -24,28 +24,40 @@ function ProjectImage({ project, index }: { project: Project; index: number }) {
   }, [images.length, reduceMotion]);
 
   return (
-    <div className="relative aspect-[16/10] overflow-hidden bg-night/50">
-      {images.map((image, imageIndex) => (
-        <Image
-          key={image.src}
-          src={image.src}
-          alt={imageIndex === currentImage ? image.alt : ""}
-          fill
-          sizes="(min-width: 768px) 33vw, 100vw"
-          aria-hidden={imageIndex !== currentImage}
-          className={`object-contain transition-opacity duration-700 ${
-            imageIndex === currentImage ? "opacity-100" : "opacity-0"
-          }`}
-        />
-      ))}
-      {images.length > 1 && (
-        <span className="absolute bottom-3 right-3 rounded-md bg-night/80 px-2 py-1 text-xs font-semibold">
-          Screenshot {currentImage + 1} of {images.length}
-        </span>
-      )}
-      <span className="absolute left-3 top-3 rounded-md bg-night/80 px-2 py-1 text-xs font-semibold">
-        {String(index + 1).padStart(2, "0")}
-      </span>
+    <div className="px-4 pt-5 sm:px-5 sm:pt-6" aria-label={`${project.title} laptop preview`}>
+      <div className="rounded-[1.1rem] border-[5px] border-[#22284d] bg-[#22284d] shadow-[0_18px_35px_rgba(0,0,0,0.32)]">
+        <div className="relative aspect-[16/10] overflow-hidden rounded-[0.65rem] bg-night/50">
+          {images.map((image, imageIndex) => (
+            <Image
+              key={image.src}
+              src={image.src}
+              alt={imageIndex === currentImage ? image.alt : ""}
+              fill
+              sizes="(min-width: 1280px) 30vw, (min-width: 640px) 45vw, 100vw"
+              aria-hidden={imageIndex !== currentImage}
+              className={`object-contain transition-opacity duration-700 ${
+                imageIndex === currentImage ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
+          {images.length > 1 && (
+            <span className="absolute bottom-2 right-2 rounded-md bg-night/85 px-2 py-1 text-[10px] font-semibold backdrop-blur">
+              {currentImage + 1}/{images.length}
+            </span>
+          )}
+          <span className="absolute left-2 top-2 rounded-md bg-night/85 px-2 py-1 text-[10px] font-semibold backdrop-blur">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        className="mx-auto h-3 w-[82%] rounded-b-[70%] bg-gradient-to-b from-[#59627e] via-[#30385c] to-[#171b38]"
+      />
+      <div
+        aria-hidden="true"
+        className="mx-auto h-1.5 w-[94%] rounded-b-lg bg-[#11142b]"
+      />
     </div>
   );
 }
@@ -64,7 +76,7 @@ export default function ProjectCards() {
           className="group overflow-hidden rounded-2xl border border-line bg-panel/70 backdrop-blur transition-colors hover:border-iris"
         >
           <ProjectImage project={project} index={i} />
-          <div className="p-5">
+          <div className="px-5 pb-5 pt-4">
             <h3 className="text-lg font-bold">{project.title}</h3>
             <p className="mt-1 text-sm text-muted">{project.description}</p>
             <a

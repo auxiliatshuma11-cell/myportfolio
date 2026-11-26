@@ -82,21 +82,21 @@ export const roles: Role[] = [
 export const projects: Project[] = [
   {
     title: "Figma design project",
-    description: "Interface design created in Figma.",
+    description: "A responsive interface concept designed in Figma with a clean layout and consistent visual style.",
     image: "/IMG/Screenshot%202026-11-17%20131310.png",
     imageAlt: "Screenshot of my Figma design project",
     href: "https://www.figma.com/design/Z7okGzoWyU2AMXLiltyoMW/Untitled?node-id=0-1&p=f&t=bg9795Eht1DR7nDv-0",
   },
   {
-    title: "Marketing strategy",
-    description: "A digital marketing strategy designed in Canva.",
+    title: "Marketing project",
+    description: "A digital marketing design created in Canva to communicate a clear message and strong brand identity.",
     image: "/IMG/Screenshot%202026-11-17%20132433.png",
-    imageAlt: "Screenshot of my marketing strategy",
+    imageAlt: "Screenshot of my marketing project",
     href: "https://www.canva.com/design/DAHTfCxdVuY/C7rDJ_HcNNggV-UGTXYQvw/edit",
   },
   {
     title: "GitHub projects",
-    description: "Code and web projects on my GitHub account.",
+    description: "A collection of coding projects that demonstrate my web development work and GitHub portfolio.",
     image: "/IMG/Screenshot%202026-11-17%20133442.png",
     imageAlt: "Screenshot of my GitHub projects",
     gallery: [
