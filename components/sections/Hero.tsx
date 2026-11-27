@@ -58,7 +58,7 @@ export default function Hero() {
               <FaArrowRight aria-hidden="true" />
             </motion.a>
             <motion.a
-              href="/Tshuma_Auxilia_Chilongezyo_CV_styled.pdf"
+              href="/Tshuma_Auxilia_Chilongezyo_CV.pdf"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
